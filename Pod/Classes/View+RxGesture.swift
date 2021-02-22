@@ -104,7 +104,7 @@ extension Reactive where Base: RxGestureView {
                         control?.removeGestureRecognizer(gesture)
                     }
                 })
-                .take(until: control.rx.deallocated)
+                .takeUntil(control.rx.deallocated)
         }
 
         return ControlEvent(events: source)
